@@ -1,0 +1,14 @@
+{
+  "name": "NFT-Market-place",
+  "version": "1.0.0",
+  "license": "(MIT AND Apache-2.0)",
+  "scripts": {
+    
+    "build": "cd nft-contract && bash build.sh && cd .. && ls && cd market_contract && bash build.sh && cd .."
+    
+  },
+  "devDependencies": {
+    "near-cli": "^3.3.0"
+  },
+  "dependencies": {}
+}

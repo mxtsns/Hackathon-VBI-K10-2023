@@ -1,0 +1,27 @@
+tdq.testnet
+flyingtung.testnet
+
+nft 
+https://ipfs.io/ipfs/QmUnXZojFwnXb223rsUw31exU4JZ4tC1PCeZMFmKGChU39/7379.jpg
+https://ipfs.io/ipfs/bafybeiah4m7djcaeodl5ewohv7mjfrqt5ckitagzimvnesofascfpocvxm
+https://ipfs.io/ipfs/bafybeicg3hwcit77cxh3ax2xllsn32h4okuf5slejb7i7sy64s6xrgyjiy
+https://ipfs.io/ipfs/bafybeiaonnsukgnxawx2jmmsdnmp2saoaeueql6fuy724mnjoxvtzauzpe
+https://ipfs.io/ipfs/QmSsYRx3LpDAb1GZQm7zZ1AuHZjfbPkD6J7s9r41xu1mf8?filename=pug.png
+
+nft-contract.flyingtung.testnet
+market_contract.flyingtung.testnet
+
+fuction để xem token 1 user sử hữu 
+
+
+fn trả về thông tin từng asset
+near view nft-contract.flyingtung.testnet nft_token '{"token_id": "token-1"}'
+
+fn list asset cua 1 user theo account_id
+near view nft-contract.flyingtung.testnet nft_tokens_for_owner '{"account_id": "'flyingtung.testnet'", "limit": 10}'
+
+mint
+near call nft-contract.youraccountname.testnet nft_mint '{"token_id": "token-1", "metadata": {"title": "My Non Fungible Team Token", "description": "The Team Most Certainly Goes :)", "media": "https://bafybeiftczwrtyr3k7a2k4vutd3amkwsmaqyhrdzlhvpt33dyjivufqusq.ipfs.dweb.link/goteam-gif.gif"}, "receiver_id": "youraccountname.testnet"}' --accountId youraccountname.testnet --amount 0.1
+
+approval 
+near call nft-contract.flyingtung.testnet nft_approve '{"token_id": "token-2", "account_id": "'market_contract.flyingtung.testnet'"}' --accountId flyingtung.testnet --deposit 0.1
